@@ -1,13 +1,5 @@
 ﻿using AutomationExercise.WebDriver;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationExercise.Models
 {
@@ -106,9 +98,9 @@ namespace AutomationExercise.Models
             Driver.Click(By.XPath("//button[text()='Create Account']"));
         }
         
-        public void AccountCreatedIsVisible()
+        public string AccountCreatedIsVisible()
         {
-            Driver.ElementIsVisible(By.XPath("//h2[@class='title text-center']/b"), 5);
+            return Driver.FindElementXpath("//h2[@class='title text-center']/b").Text;
         }
         
         public void ContinueClick()
@@ -116,21 +108,41 @@ namespace AutomationExercise.Models
             Driver.Click(By.XPath("//a[@class='btn btn-primary']"));
         }
         
-        public void LoggedControl()
+        public bool LoggedControl()
         {
-            //Driver.ElementIsVisible(By.XPath("//a[contains(text(),' Logged in as ')]"), 5);
-            Driver.ElementIsVisible(By.PartialLinkText("Logged in"), 5);
+            return Driver.FindElementXpath("//a[contains(text(),' Logged in as ')]").Displayed;
         }
         
         public void DeleteAccountClick()
         {
-            Driver.FindElementPartialLinkText("Delete Acco");
+            Driver.FindElementPartialLinkText("Delete Acco").Click();
         }
         
         public void AccountDeletedControl()
         {
             Driver.ElementIsVisible(By.XPath("//h2[@class='title text-center']/b"), 5);
             Driver.Click(By.XPath("//div[@class='pull-right']/a"));
+        }
+        
+        public string LoginAccountControl()
+        {
+            return Driver.FindElementXpath("//div[@class='login-form']/h2").Text;
+        }
+        
+        public void EnterAccount()
+        {
+            Driver.SendKey(By.XPath("//form[@action='/login']/input[2]"), "autumnwinds_54@hotmail.com");
+            Driver.SendKey(By.XPath("//form[@action='/login']/input[3]"),"1989270");
+        }
+        
+        public void ClickLoginButton()
+        {
+            Driver.Click(By.XPath("//button[@data-qa='login-button']"));
+        }
+        
+        public string AccountDeletedVisible()
+        {
+            return Driver.FindElementXpath("//h2[@class='title text-center']/b").Text;
         }
 
     }

@@ -1,11 +1,6 @@
 ﻿using AutomationExercise.Models;
 using AutomationExercise.Steps.BaseSteps;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace AutomationExercise.Steps
@@ -27,10 +22,10 @@ namespace AutomationExercise.Steps
             model.LoginClick();
         }
         
-        [StepDefinition(@"Verify 'New User Signup!' is visible")]
-        public void SignUpIsVisible()
+        [StepDefinition(@"Verify '(.*)' is visible")]
+        public void SignUpIsVisible(string catName)
         {
-            Assert.AreEqual(model.SignUpIsVisible(), "New User Signup!");
+            Assert.AreEqual(model.SignUpIsVisible(), catName);
         }
         
         [StepDefinition(@"Enter name and email address")]
@@ -45,10 +40,10 @@ namespace AutomationExercise.Steps
             model.SignUpClick();
         }
         
-        [StepDefinition(@"Verify that 'ENTER ACCOUNT INFORMATION' is visible")]
-        public void EnterAccountControl()
+        [StepDefinition(@"Verify that '(.*)' is visible")]
+        public void EnterAccountControl(string catName)
         {
-            Assert.IsTrue(model.EnterAccountControl().Contains("ENTER ACCOUNT INFORMATION"));
+            Assert.IsTrue(model.EnterAccountControl().Contains(catName));
         }
         
         [StepDefinition(@"Fill details: Title, Name, Email, Password, Date of birth")]
@@ -81,10 +76,10 @@ namespace AutomationExercise.Steps
             model.CreateAccountClick();
         }
         
-        [StepDefinition(@"Verify that 'ACCOUNT CREATED!' is visible")]
-        public void AccountCreatedIsVisible()
+        [StepDefinition(@"Verifyy that '(.*)' is visible")]
+        public void AccountCreatedIsVisible(string catName)
         {
-            model.AccountCreatedIsVisible();
+            Assert.IsTrue(model.AccountCreatedIsVisible().Contains(catName));
         }
         
         [StepDefinition(@"Click 'Continue' button")]
@@ -93,10 +88,10 @@ namespace AutomationExercise.Steps
             model.ContinueClick();
         }
         
-        [StepDefinition(@"Verify that 'Logged in as username' is visible")]
+        [StepDefinition(@"Verify that Logged in as username is visible")]
         public void LoggedControl()
         {
-            model.LoggedControl();
+            Assert.IsTrue(model.LoggedControl());
         }
         
         [StepDefinition(@"Click 'Delete Account' button")]
@@ -111,5 +106,29 @@ namespace AutomationExercise.Steps
             model.AccountDeletedControl();
         }
 
+        
+        [StepDefinition(@"Verifyy '(.*)' is visible")]
+        public void LoginAccountControl(string catName)
+        {
+            Assert.AreEqual(model.LoginAccountControl(), catName);
+        }
+        
+        [StepDefinition(@"Enter correct email address and password")]
+        public void EnterAccount()
+        {
+            model.EnterAccount();
+        }
+        
+        [StepDefinition(@"Click 'login' button")]
+        public void ClickLoginButton()
+        {
+            model.ClickLoginButton();
+        }
+        
+        [StepDefinition(@"Verifyyy that '(.*)' is visible")]
+        public void AccountDeletedVisible(string catName)
+        {
+            Assert.AreEqual(model.AccountDeletedVisible(),catName);
+        }
     }
 }
