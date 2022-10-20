@@ -48,4 +48,15 @@ Scenario: Test Case 1_Register User
 * Verify that "ACCOUNT DELETED" is visible and click Continue button
 ```
 Scenario: Test Case 2_Login User with correct email and password
-
+```
+* Launch browser
+* Navigate to url 'http://automationexercise.com'
+* Verify that home page is visible successfully
+* Click on 'Signup / Login' button
+* Verify 'Login to your account' is visible
+* Enter correct email address and password
+* Click 'login' button
+* Verify that 'Logged in as username' is visible
+* Click 'Delete Account' button
+* Verify that 'ACCOUNT DELETED!' is visible
+```
