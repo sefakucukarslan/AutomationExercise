@@ -1,4 +1,5 @@
 ﻿using AutomationExercise.WebDriver;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace AutomationExercise.Steps.BaseSteps
             Driver.GoToUrl(url);
         }
 
+        [StepDefinition(@"Verify that home page is visible successfully")]
+        public void HomePageControl()
+        {
+            Assert.IsTrue(Driver.HomePageControl());
+        }
 
         [After]
         public void DriverQuit()

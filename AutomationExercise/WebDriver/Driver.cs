@@ -31,6 +31,10 @@ namespace AutomationExercise.WebDriver
         {
             driver.Navigate().GoToUrl(url);
         }
+        public static bool HomePageControl()
+        {
+            return driver.FindElement(By.XPath("//div[@class='logo pull-left']")).Displayed;
+        }
         public static IWebElement FindElementXpath(string locator)
         {
             return driver.FindElement(By.XPath(locator));
@@ -43,6 +47,11 @@ namespace AutomationExercise.WebDriver
         public static IWebElement FindElementPartialLinkText(string locator)
         {
             return driver.FindElement(By.PartialLinkText(locator));
+        }
+
+        public static void ClickOkButton()
+        {
+            driver.SwitchTo().Alert().Accept();
         }
 
         public static ReadOnlyCollection<IWebElement> FindElements(string xpath)
@@ -72,17 +81,17 @@ namespace AutomationExercise.WebDriver
             select.SelectByText(value);
         }      
         
-        public static void ElementIsVisible(By locator, int second)
+        public static string ElementIsVisible(By locator, int second)
         {
             try
             {
                 wait = new WebDriverWait(driver, TimeSpan.FromSeconds(second));
                 wait.Until(ExpectedConditions.ElementIsVisible(locator));
+                return null;
             }
-            catch 
+            catch (Exception e) 
             {
-
-                throw new ElementNotVisibleException("Element bulunamadı!!!");
+                return e.Message;
             }
         }
     }

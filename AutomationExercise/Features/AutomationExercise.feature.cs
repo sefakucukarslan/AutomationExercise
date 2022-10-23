@@ -83,6 +83,9 @@ testRunner.And("Launch browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(nu
 #line 7
 testRunner.And("Navigate to url \'http://automationexercise.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
+#line 8
+testRunner.And("Verify that home page is visible successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
@@ -94,7 +97,7 @@ testRunner.And("Navigate to url \'http://automationexercise.com\'", ((string)(nu
                     "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register User", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -106,9 +109,6 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line hidden
-#line 11
-testRunner.And("Verify that home page is visible successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 12
 testRunner.And("Click on \'Signup / Login\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
@@ -123,7 +123,7 @@ testRunner.And("Enter name and email address", ((string)(null)), ((TechTalk.Spec
 testRunner.And("Click \'Signup\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 16
-testRunner.And("Verify that \'ENTER ACCOUNT INFORMATION\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Verify that \'Enter Account Information\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 17
 testRunner.And("Fill details: Title, Name, Email, Password, Date of birth", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
@@ -142,7 +142,7 @@ testRunner.And("Fill details: First name, Last name, Company, Address, Address2,
 testRunner.And("Click \'Create Account button\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 22
-testRunner.And("Verifyy that \'ACCOUNT CREATED!\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Verify that \'Account Created!\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 23
 testRunner.And("Click \'Continue\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
@@ -154,7 +154,10 @@ testRunner.And("Verify that Logged in as username is visible", ((string)(null)),
 testRunner.And("Click \'Delete Account\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 26
-testRunner.And("Verify that \'ACCOUNT DELETED!\' is visible and click \'Continue\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Verify that \'Account Deleted!\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 27
+testRunner.And("Click \'Continue\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -169,7 +172,7 @@ testRunner.And("Verify that \'ACCOUNT DELETED!\' is visible and click \'Continue
                     "tag2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login User with correct email and password", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 29
+#line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -182,14 +185,11 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 30
-testRunner.And("Verify that home page is visible successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
-#line hidden
 #line 31
 testRunner.And("Click on \'Signup / Login\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 32
-testRunner.And("Verifyy \'Login to your account\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Verify \'Login to your account\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 33
 testRunner.And("Enter correct email address and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
@@ -204,7 +204,102 @@ testRunner.And("Verify that Logged in as username is visible", ((string)(null)),
 testRunner.And("Click \'Delete Account\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 37
-testRunner.And("Verifyyy that \'ACCOUNT DELETED!\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Verify that \'Account Deleted!\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Login User with incorrect email and password")]
+        [NUnit.Framework.CategoryAttribute("tag3")]
+        public void LoginUserWithİncorrectEmailAndPassword()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "tag3"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login User with incorrect email and password", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 40
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+#line 41
+testRunner.And("Click on \'Signup / Login\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 42
+testRunner.And("Verify \'Login to your account\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 43
+testRunner.And("Enter incorrect email address and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 44
+testRunner.And("Click \'login\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 45
+testRunner.And("Verify error \'Your email or password is incorrect!\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Contact Us Form")]
+        [NUnit.Framework.CategoryAttribute("tag4")]
+        public void ContactUsForm()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "tag4"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Contact Us Form", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 48
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+#line 49
+testRunner.And("Click on Contact Us button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 50
+testRunner.And("Verify \'Get In Touch\' is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 51
+testRunner.And("Enter name, email, subject and message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 52
+testRunner.And("Upload file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 53
+testRunner.And("Click Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 54
+testRunner.And("Click OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 55
+testRunner.And("Verify success message \'Success! Your details have been submitted successfully.\' " +
+                        "is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 56
+testRunner.And("Click Home button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 57
+testRunner.And("Verify that home page is visible successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();

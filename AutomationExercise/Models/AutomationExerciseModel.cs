@@ -4,21 +4,16 @@ using OpenQA.Selenium;
 namespace AutomationExercise.Models
 {
     public class AutomationExerciseModel
-    {       
-        
-        public void HomePageControl()
-        {
-            Driver.ElementIsVisible(By.XPath("//div[@class='logo pull-left']"),5);
-        }
-        
+    {               
+               
         public void LoginClick()
         {
             Driver.FindElementXpath("//a[text()=' Signup / Login']").Click();
         }
         
-        public string SignUpIsVisible()
+        public string VerifyIsVisible(string catName)
         {
-            return Driver.FindElementXpath("//h2[text()='New User Signup!']").Text;
+            return Driver.ElementIsVisible(By.XPath("//h2[contains(text(),'" + catName + "')]"),5);
         }
         
         public void NameEmail()
@@ -33,9 +28,9 @@ namespace AutomationExercise.Models
             Driver.FindElementXpath("//button[text()='Signup']").Click();
         }
         
-        public string EnterAccountControl()
+        public string VerifyThat(string catName)
         {
-            return Driver.FindElementXpath("//div[@class='login-form']/h2/b").Text;
+            return Driver.ElementIsVisible(By.XPath("//h2/b[starts-with(text(),'" + catName +"')]"),5);           
         }
         
         public void FillDetails()
@@ -54,13 +49,13 @@ namespace AutomationExercise.Models
         }
 
         public void SelectNewsletter()
-        {            
-            Driver.Click(By.Id("newsletter"));
+        {
+            Driver.MoveToElement(By.Id("newsletter"));
         }
         
         public void SelectReceive()
-        {            
-            Driver.Click(By.Id("optin"));
+        {
+            Driver.MoveToElement(By.Id("optin"));
         }
         
         public void AdressInformation()
@@ -105,7 +100,7 @@ namespace AutomationExercise.Models
         
         public void ContinueClick()
         {
-            Driver.Click(By.XPath("//a[@class='btn btn-primary']"));
+            Driver.MoveToElement(By.XPath("//a[@class='btn btn-primary']"));
         }
         
         public bool LoggedControl()
@@ -143,6 +138,56 @@ namespace AutomationExercise.Models
         public string AccountDeletedVisible()
         {
             return Driver.FindElementXpath("//h2[@class='title text-center']/b").Text;
+        }
+        
+        public void IncorrectInformation()
+        {
+            Driver.SendKey(By.XPath("//form[@action='/login']/input[2]"), Faker.Internet.Email());
+            Driver.SendKey(By.XPath("//form[@action='/login']/input[3]"), Faker.Internet.UserName());
+        }
+        
+        public string VerifyError(string catName)
+        {
+            return Driver.ElementIsVisible(By.XPath("//p[contains(text(),'" + catName + "')]"), 5);
+        }
+        
+        public void ClickContactUs()
+        {
+            Driver.FindElementPartialLinkText("Contact").Click();
+        }
+        
+        public void EnterInformation()
+        {
+            Driver.SendKey(By.XPath("//input[@name='name']"), Faker.Name.First());
+            Driver.SendKey(By.XPath("//input[@name='email']"), Faker.Internet.Email());
+            Driver.SendKey(By.XPath("//input[@name='subject']"), Faker.Lorem.Sentence());
+            Driver.SendKey(By.Id("message"), Faker.Lorem.Paragraph());
+            
+        }
+
+        public void UploadFile()
+        {
+            Driver.SendKey(By.XPath("//input[@type='file']"), @"C:\Users\autum\Desktop\selenium.png");
+        }
+        
+        public void ClickSubmitButton()
+        {
+            Driver.Click(By.XPath("//input[@name='submit']"));
+        }
+        
+        public void ClickOkButton()
+        {
+            Driver.ClickOkButton();
+        }
+        
+        public string VerifySuccessMessage(string catName)
+        {
+            return Driver.ElementIsVisible(By.XPath("//div[starts-with(text(),'" + catName + "')]"), 5);
+        }
+        
+        public void ClickHome()
+        {
+            Driver.Click(By.XPath("//span[text()=' Home']"));
         }
 
     }

@@ -10,12 +10,6 @@ namespace AutomationExercise.Steps
     {
         AutomationExerciseModel model = new AutomationExerciseModel();
 
-        [StepDefinition(@"Verify that home page is visible successfully")]
-        public void HomePageControl()
-        {
-            model.HomePageControl();
-        }
-        
         [StepDefinition(@"Click on 'Signup / Login' button")]
         public void LoginClick()
         {
@@ -23,9 +17,9 @@ namespace AutomationExercise.Steps
         }
         
         [StepDefinition(@"Verify '(.*)' is visible")]
-        public void SignUpIsVisible(string catName)
+        public void VerifyIsVisible(string catName)
         {
-            Assert.AreEqual(model.SignUpIsVisible(), catName);
+            Assert.IsNull(model.VerifyIsVisible(catName));
         }
         
         [StepDefinition(@"Enter name and email address")]
@@ -41,9 +35,9 @@ namespace AutomationExercise.Steps
         }
         
         [StepDefinition(@"Verify that '(.*)' is visible")]
-        public void EnterAccountControl(string catName)
+        public void VerifyThat(string catName)
         {
-            Assert.IsTrue(model.EnterAccountControl().Contains(catName));
+            Assert.IsNull(model.VerifyThat(catName),"Element Not Found!!");
         }
         
         [StepDefinition(@"Fill details: Title, Name, Email, Password, Date of birth")]
@@ -74,13 +68,7 @@ namespace AutomationExercise.Steps
         public void CreateAccountClick()
         {
             model.CreateAccountClick();
-        }
-        
-        [StepDefinition(@"Verifyy that '(.*)' is visible")]
-        public void AccountCreatedIsVisible(string catName)
-        {
-            Assert.IsTrue(model.AccountCreatedIsVisible().Contains(catName));
-        }
+        }        
         
         [StepDefinition(@"Click 'Continue' button")]
         public void ContinueClick()
@@ -98,20 +86,8 @@ namespace AutomationExercise.Steps
         public void DeleteAccountClick()
         {
             model.DeleteAccountClick();
-        }
-        
-        [StepDefinition(@"Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button")]
-        public void AccountDeletedControl()
-        {
-            model.AccountDeletedControl();
-        }
-
-        
-        [StepDefinition(@"Verifyy '(.*)' is visible")]
-        public void LoginAccountControl(string catName)
-        {
-            Assert.AreEqual(model.LoginAccountControl(), catName);
-        }
+        }     
+       
         
         [StepDefinition(@"Enter correct email address and password")]
         public void EnterAccount()
@@ -125,10 +101,60 @@ namespace AutomationExercise.Steps
             model.ClickLoginButton();
         }
         
-        [StepDefinition(@"Verifyyy that '(.*)' is visible")]
-        public void AccountDeletedVisible(string catName)
+        
+        [StepDefinition(@"Enter incorrect email address and password")]
+        public void IncorrectInformation()
         {
-            Assert.AreEqual(model.AccountDeletedVisible(),catName);
+            model.IncorrectInformation();
         }
+        
+        [StepDefinition(@"Verify error '(.*)' is visible")]
+        public void VerifyError(string catName)
+        {
+            Assert.IsNull(model.VerifyError(catName));
+        }
+        
+        [StepDefinition(@"Click on Contact Us button")]
+        public void ClickContactUs()
+        {
+            model.ClickContactUs();
+        }
+        
+        [StepDefinition(@"Enter name, email, subject and message")]
+        public void EnterInformation()
+        {
+            model.EnterInformation();
+        }
+        
+        [StepDefinition(@"Upload file")]
+        public void UploadFile()
+        {
+            model.UploadFile();
+        }
+        
+        [StepDefinition(@"Click Submit button")]
+        public void ClickSubmitButton()
+        {
+            model.ClickSubmitButton();
+        }
+        
+        [StepDefinition(@"Click OK button")]
+        public void ClickOkButton()
+        {
+            model.ClickOkButton();
+        }
+        
+        [StepDefinition(@"Verify success message '(.*)' is visible")]
+        public void VerifySuccessMessage(string catName)
+        {
+            model.VerifySuccessMessage(catName);
+        }
+        
+        [StepDefinition(@"Click Home button")]
+        public void ClickHome()
+        {
+            model.ClickHome();
+        }
+
     }
 }

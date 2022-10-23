@@ -5,33 +5,53 @@ Test about AutomationExercise web site
 Background: 
 * Launch browser
 * Navigate to url 'http://automationexercise.com'
+* Verify that home page is visible successfully
 
 @tag1
 Scenario: Register User
-* Verify that home page is visible successfully
 * Click on 'Signup / Login' button
 * Verify 'New User Signup!' is visible
 * Enter name and email address
 * Click 'Signup' button
-* Verify that 'ENTER ACCOUNT INFORMATION' is visible
+* Verify that 'Enter Account Information' is visible
 * Fill details: Title, Name, Email, Password, Date of birth
 * Select checkbox 'Sign up for our newsletter!'
 * Select checkbox 'Receive special offers from our partners!'
 * Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
 * Click 'Create Account button'
-* Verifyy that 'ACCOUNT CREATED!' is visible
+* Verify that 'Account Created!' is visible
 * Click 'Continue' button
 * Verify that Logged in as username is visible
 * Click 'Delete Account' button
-* Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
+* Verify that 'Account Deleted!' is visible
+* Click 'Continue' button
 
 @tag2
 Scenario: Login User with correct email and password
-* Verify that home page is visible successfully
 * Click on 'Signup / Login' button
-* Verifyy 'Login to your account' is visible
+* Verify 'Login to your account' is visible
 * Enter correct email address and password
 * Click 'login' button
 * Verify that Logged in as username is visible
 * Click 'Delete Account' button
-* Verifyyy that 'ACCOUNT DELETED!' is visible
+* Verify that 'Account Deleted!' is visible
+
+@tag3
+Scenario: Login User with incorrect email and password
+* Click on 'Signup / Login' button
+* Verify 'Login to your account' is visible
+* Enter incorrect email address and password
+* Click 'login' button
+* Verify error 'Your email or password is incorrect!' is visible
+
+@tag4
+Scenario: Contact Us Form
+* Click on Contact Us button
+* Verify 'Get In Touch' is visible
+* Enter name, email, subject and message
+* Upload file
+* Click Submit button
+* Click OK button
+* Verify success message 'Success! Your details have been submitted successfully.' is visible
+* Click Home button
+* Verify that home page is visible successfully
