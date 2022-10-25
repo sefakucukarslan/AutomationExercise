@@ -43,15 +43,3 @@ Scenario: Login User with incorrect email and password
 * Enter incorrect email address and password
 * Click 'login' button
 * Verify error 'Your email or password is incorrect!' is visible
-
-@tag4
-Scenario: Contact Us Form
-* Click on Contact Us button
-* Verify 'Get In Touch' is visible
-* Enter name, email, subject and message
-* Upload file
-* Click Submit button
-* Click OK button
-* Verify success message 'Success! Your details have been submitted successfully.' is visible
-* Click Home button
-* Verify that home page is visible successfully

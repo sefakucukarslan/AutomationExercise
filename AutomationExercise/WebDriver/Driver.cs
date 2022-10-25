@@ -23,22 +23,27 @@ namespace AutomationExercise.WebDriver
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);            
         }
+
         public static void DriverQuit()
         {
             driver.Quit();
         }
+
         public static void GoToUrl(string url)
         {
             driver.Navigate().GoToUrl(url);
         }
+
         public static bool HomePageControl()
         {
             return driver.FindElement(By.XPath("//div[@class='logo pull-left']")).Displayed;
         }
+
         public static IWebElement FindElementXpath(string locator)
         {
             return driver.FindElement(By.XPath(locator));
         }
+
         public static IWebElement FindElementId(string id)
         {
             return driver.FindElement(By.Id(id));
@@ -69,11 +74,21 @@ namespace AutomationExercise.WebDriver
             action = new Actions(driver);
             action.MoveToElement(element).Click().Perform();            
         }
+
+        public static void MoveToElements(IWebElement element)
+        {
+            action = new Actions(driver);
+            action.MoveToElement(element).Perform();
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+            wait.Until(ExpectedConditions.ElementToBeClickable(element));
+        }
+
         public static void Click(By key)
         {
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
             wait.Until(ExpectedConditions.ElementToBeClickable(key)).Click();
         }
+
         public static void SelectElementFromDropdown(By key, string value)
         {
             element = driver.FindElement(key);
@@ -81,6 +96,12 @@ namespace AutomationExercise.WebDriver
             select.SelectByText(value);
         }      
         
+        public static void ScrollBy(int x, int y)
+        {
+            IJavaScriptExecutor js = driver as IJavaScriptExecutor;
+            js.ExecuteScript("window.scrollBy(" + x + "," + y + ");");
+        }
+
         public static string ElementIsVisible(By locator, int second)
         {
             try

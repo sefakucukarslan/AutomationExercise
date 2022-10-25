@@ -112,49 +112,6 @@ namespace AutomationExercise.Steps
         public void VerifyError(string catName)
         {
             Assert.IsNull(model.VerifyError(catName));
-        }
-        
-        [StepDefinition(@"Click on Contact Us button")]
-        public void ClickContactUs()
-        {
-            model.ClickContactUs();
-        }
-        
-        [StepDefinition(@"Enter name, email, subject and message")]
-        public void EnterInformation()
-        {
-            model.EnterInformation();
-        }
-        
-        [StepDefinition(@"Upload file")]
-        public void UploadFile()
-        {
-            model.UploadFile();
-        }
-        
-        [StepDefinition(@"Click Submit button")]
-        public void ClickSubmitButton()
-        {
-            model.ClickSubmitButton();
-        }
-        
-        [StepDefinition(@"Click OK button")]
-        public void ClickOkButton()
-        {
-            model.ClickOkButton();
-        }
-        
-        [StepDefinition(@"Verify success message '(.*)' is visible")]
-        public void VerifySuccessMessage(string catName)
-        {
-            model.VerifySuccessMessage(catName);
-        }
-        
-        [StepDefinition(@"Click Home button")]
-        public void ClickHome()
-        {
-            model.ClickHome();
-        }
-
+        }  
     }
 }
