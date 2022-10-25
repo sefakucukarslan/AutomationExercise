@@ -21,7 +21,9 @@ https://www.automationexercise.com/test_cases I made 26 Test Cases on the websit
 
 ## Case Aşamaları:
 ***
-Scenario: Test Case 1_Register User
+Test Case 1 :
+
+Scenario: Register User
 ```
 * Click on Signup Login button
 
@@ -31,13 +33,13 @@ Scenario: Test Case 1_Register User
 
 * Click Signup button
 
-* Verify that 'ENTER ACCOUNT INFORMATION' is visible
+* Verify that 'Enter Account Information' is visible
 
 * Fill details: Title, Name, Email, Password, Date of birth
 
 * Click Create Button
 
-* Verify that "ACCOUNT CREATED!" message
+* Verify that "Account Created!" message
 
 * Click Continue button
 
@@ -45,9 +47,11 @@ Scenario: Test Case 1_Register User
 
 * Click Delete Account button
 
-* Verify that "ACCOUNT DELETED" is visible and click Continue button
+* Verify that "Account Deleted!" is visible and click Continue button
 ```
-Scenario: Test Case 2_Login User with correct email and password
+Test Case 2 :
+
+Scenario: Login User with correct email and password
 ```
 * Launch browser
 
@@ -67,5 +71,41 @@ Scenario: Test Case 2_Login User with correct email and password
 
 * Click 'Delete Account' button
 
-* Verify that 'ACCOUNT DELETED!' is visible
+* Verify that 'Account Deleted!' is visible
+```
+Test Case 3 :
+
+Scenario: Login User with incorrect email and password
+```
+* Click on 'Signup / Login' button
+
+* Verify 'Login to your account' is visible
+
+* Enter incorrect email address and password
+
+* Click 'login' button
+
+* Verify error 'Your email or password is incorrect!' is visible
+```
+Test Case 4 :
+
+Scenario: Contact Us Form
+```
+* Click on Contact Us button
+
+* Verify 'Get In Touch' is visible
+
+* Enter name, email, subject and message
+
+* Upload file
+
+* Click Submit button
+
+* Click OK button
+
+* Verify success message 'Success! Your details have been submitted successfully.' is visible
+
+* Click Home button
+
+* Verify that home page is visible successfully
 ```
