@@ -93,11 +93,6 @@ namespace AutomationExercise.Models
             Driver.Click(By.XPath("//button[text()='Create Account']"));
         }
         
-        public string AccountCreatedIsVisible()
-        {
-            return Driver.FindElementXpath("//h2[@class='title text-center']/b").Text;
-        }
-        
         public void ContinueClick()
         {
             Driver.MoveToElement(By.XPath("//a[@class='btn btn-primary']"));

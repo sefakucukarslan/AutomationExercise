@@ -15,7 +15,6 @@ namespace AutomationExercise.WebDriver
         private static WebDriverWait wait;
         public static Actions action;
         private static SelectElement select;
-        
 
         public static void DriverStart()
         {
@@ -54,7 +53,7 @@ namespace AutomationExercise.WebDriver
             return driver.FindElement(By.PartialLinkText(locator));
         }
 
-        public static void ClickOkButton()
+        public static void AlertAccept()
         {
             driver.SwitchTo().Alert().Accept();
         }
@@ -66,7 +65,7 @@ namespace AutomationExercise.WebDriver
         public static void SendKey(By key, string text)
         {
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
-            wait.Until(ExpectedConditions.ElementToBeClickable(key)).SendKeys(text);
+            wait.Until(ExpectedConditions.ElementExists(key)).SendKeys(text);
         }
         public static void MoveToElement(By key)
         {

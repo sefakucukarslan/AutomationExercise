@@ -84,11 +84,13 @@
     <Compile Include="Models\AutomationExerciseModel.cs" />
     <Compile Include="Models\ContactUsFormModel.cs" />
     <Compile Include="Models\ProductsInCartModel.cs" />
+    <Compile Include="Models\PurchaseOrderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\AutomationExerciseSteps.cs" />
     <Compile Include="Steps\BaseSteps\BaseStep.cs" />
     <Compile Include="Steps\ContactUsFormSteps.cs" />
     <Compile Include="Steps\ProductsInCartSteps.cs" />
+    <Compile Include="Steps\PurchaseOrderSteps.cs" />
     <Compile Include="WebDriver\Driver.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +98,7 @@
     <None Include="Features\AutomationExercise.feature" />
     <None Include="Features\ContactUsForm.feature" />
     <None Include="Features\ProductsInCart.feature" />
+    <None Include="Features\PurchaseOrder.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

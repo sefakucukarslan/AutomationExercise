@@ -35,7 +35,7 @@ namespace AutomationExercise.Models
 
         public void ClickOkButton()
         {
-            Driver.ClickOkButton();
+            Driver.AlertAccept();
         }
 
         public string VerifySuccessMessage(string catName)
