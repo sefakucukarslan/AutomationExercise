@@ -1,6 +1,6 @@
 # AutomationExercise
 AutomationExercise Test Cases
-https://www.automationexercise.com/test_cases I made 26 Test Cases on the website.
+https://www.automationexercise.com/test_cases
 
 <img width="344" alt="logo" src="https://user-images.githubusercontent.com/100466472/196940302-336c572d-6b41-4d7e-907a-ad4d91400879.png">
 
